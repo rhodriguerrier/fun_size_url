@@ -16,4 +16,4 @@ Potential future improvements:
 - Add testing (this started as a project to learn docker with multiple containers so very much tested along the way but TDD would be better)
 - Handle incorrect URLs and hashes better (at the moment they just reroute to the root)
 
-![Fun Size URL](https://github.com/rhodriguerrier/fun_size_url/blob/main/fun_size_url_example.png?raw=true)
+![Fun Size URL](https://github.com/rhodriguerrier/fun_size_url/blob/main/fun_size_url_example.PNG?raw=true)
