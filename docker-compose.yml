@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    webapp:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+        depends_on:
+            cassandra:
+                condition: service_healthy
+    cassandra:
+        image: cassandra:3.10
+        container_name: my-cassandra-image
+        volumes:
+            - ./initDb.cql:/initDb.cql
+        healthcheck:
+            test: ["CMD", "cqlsh", "my-cassandra-image", "-f", "initDb.cql"]
+            interval: 10s
+            timeout: 5s
+            retries: 60
